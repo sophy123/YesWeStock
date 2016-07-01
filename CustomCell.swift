@@ -10,8 +10,6 @@ import UIKit
 
 class CustomCell: UITableViewCell {
     
-    
-    @IBOutlet weak var LabelOne: UILabel!
     @IBOutlet private weak var CollectionView: UICollectionView!
 
     func setCollectionViewDataSourceDelegate
@@ -23,5 +21,6 @@ class CustomCell: UITableViewCell {
         CollectionView.tag = row
         CollectionView.reloadData()
     }
+    
     
 }

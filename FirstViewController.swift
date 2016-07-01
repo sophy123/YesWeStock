@@ -32,9 +32,8 @@ class FirstViewController: UITableViewController {
     override func tableView(tableView: UITableView,
                             cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell",
-                                                               forIndexPath: indexPath)
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomCell
+                
         return cell
     }
     
@@ -47,7 +46,6 @@ class FirstViewController: UITableViewController {
         tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
         
     }
-
     
 }
 
@@ -66,11 +64,16 @@ extension FirstViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         cell.backgroundColor = model[collectionView.tag][indexPath.item]
         
-        
-        
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+
+        print("Touched")
+        
+    }
 }
+
 
 
 //
